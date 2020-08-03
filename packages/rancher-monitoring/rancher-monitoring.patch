@@ -8,7 +8,7 @@ diff -x '*.tgz' -x '*.lock' -uNr packages/rancher-monitoring/charts-original/Cha
 -  and management of Prometheus instances.
 +annotations:
 +  catalog.cattle.io/certified: rancher
-+  catalog.cattle.io/namespace: monitoring-system
++  catalog.cattle.io/namespace: cattle-monitoring-system
 +  catalog.cattle.io/release-name: rancher-monitoring
 +  catalog.cattle.io/ui-component: monitoring
 +description: A Rancher chart that modifies the upstream Prometheus Operator chart, which provides easy monitoring definitions for Kubernetes services and the deployment and management of Prometheus instances, and enables Prometheus Adapter on a default Prometheus instance.

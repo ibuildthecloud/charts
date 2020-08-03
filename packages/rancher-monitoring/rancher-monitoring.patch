@@ -1551,7 +1551,60 @@ diff -x '*.tgz' -x '*.lock' -uNr packages/rancher-monitoring/charts-original/val
      ## Define which Nodes the Pods are scheduled on.
      ## ref: https://kubernetes.io/docs/user-guide/node-selection/
      ##
-@@ -1802,9 +2057,13 @@
+@@ -1654,13 +1909,14 @@
+     ## If nil, select own namespace. Namespaces to be selected for ServiceMonitor discovery.
+     ## See https://github.com/coreos/prometheus-operator/blob/master/Documentation/api.md#namespaceselector for usage
+     ##
+-    ruleNamespaceSelector: {}
++    ruleNamespaceSelector:
++      any: true
+ 
+     ## If true, a nil or {} value for prometheus.prometheusSpec.ruleSelector will cause the
+     ## prometheus resource to be created with selectors based on values in the helm deployment,
+     ## which will also match the PrometheusRule resources created
+     ##
+-    ruleSelectorNilUsesHelmValues: true
++    ruleSelectorNilUsesHelmValues: false
+ 
+     ## PrometheusRules to be selected for target discovery.
+     ## If {}, select all ServiceMonitors
+@@ -1685,7 +1941,7 @@
+     ## prometheus resource to be created with selectors based on values in the helm deployment,
+     ## which will also match the servicemonitors created
+     ##
+-    serviceMonitorSelectorNilUsesHelmValues: true
++    serviceMonitorSelectorNilUsesHelmValues: false
+ 
+     ## ServiceMonitors to be selected for target discovery.
+     ## If {}, select all ServiceMonitors
+@@ -1699,13 +1955,14 @@
+     ## Namespaces to be selected for ServiceMonitor discovery.
+     ## See https://github.com/coreos/prometheus-operator/blob/master/Documentation/api.md#namespaceselector for usage
+     ##
+-    serviceMonitorNamespaceSelector: {}
++    serviceMonitorNamespaceSelector:
++      any: true
+ 
+     ## If true, a nil or {} value for prometheus.prometheusSpec.podMonitorSelector will cause the
+     ## prometheus resource to be created with selectors based on values in the helm deployment,
+     ## which will also match the podmonitors created
+     ##
+-    podMonitorSelectorNilUsesHelmValues: true
++    podMonitorSelectorNilUsesHelmValues: false
+ 
+     ## PodMonitors to be selected for target discovery.
+     ## If {}, select all PodMonitors
+@@ -1719,7 +1976,8 @@
+     ## Namespaces to be selected for PodMonitor discovery.
+     ## See https://github.com/coreos/prometheus-operator/blob/master/Documentation/api.md#namespaceselector for usage
+     ##
+-    podMonitorNamespaceSelector: {}
++    podMonitorNamespaceSelector:
++      any: true
+ 
+     ## How long to retain metrics
+     ##
+@@ -1802,9 +2060,13 @@
  
      ## Resource limits & requests
      ##

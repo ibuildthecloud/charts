@@ -231,7 +231,7 @@ entries:
       catalog.cattle.io/ui-component: istio
     apiVersion: v1
     appVersion: 1.7.1
-    kubeVersion: <1.18
+    kubeVersion: <1.19
     created: "2020-09-29T15:49:20.113223-07:00"
     dependencies:
     - alias: kiali
